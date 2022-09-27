@@ -1,10 +1,10 @@
 package dio.web.api.docker;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -23,6 +23,7 @@ public class SwaggerConfig {
                 "http://www.seusite.com.br",
                 "voce@seusite.com.br");
     }
+
     private ApiInfoBuilder informacoesApi() {
 
         ApiInfoBuilder apiInfoBuilder = new ApiInfoBuilder();
@@ -45,7 +46,7 @@ public class SwaggerConfig {
 
         docket
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("pacote.comseus.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("dio.web.api"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(this.informacoesApi().build())
