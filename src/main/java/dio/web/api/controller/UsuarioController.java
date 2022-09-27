@@ -20,14 +20,9 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository repository;
 
-    @GetMapping()
+    @GetMapping
     public List<Usuario> getUsers() {
         return repository.findAll();
-    }
-
-    @GetMapping("/{id}")
-    public Usuario getById(@PathVariable("id") Integer id) {
-        return repository.findById(id);
     }
 
     @GetMapping("/{username}")
@@ -40,7 +35,7 @@ public class UsuarioController {
         repository.deleteById(id);
     }
 
-    @PostMapping()
+    @PostMapping
     public void postUser(@RequestBody Usuario usuario) {
         repository.save(usuario);
     }
