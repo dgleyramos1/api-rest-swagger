@@ -27,7 +27,7 @@ public class UsuarioRepository {
     public List<Usuario> findAll() {
         System.out.println("LIST - Listando os usários do sistema");
         List<Usuario> usuarios = new ArrayList<>();
-        usuarios.add(new Usuario("gleyson", "password"));
+        usuarios.add(new Usuario("ramos", "password"));
         usuarios.add(new Usuario("frank", "masterpass"));
         return usuarios;
     }
