@@ -1,6 +1,8 @@
 package dio.web.api.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +27,9 @@ public class UsuarioController {
         return repository.findAll();
     }
 
-    @GetMapping("/{username}")
-    public Usuario getOne(@PathVariable("username") String username) {
-        return repository.findByUsername(username);
+    @GetMapping("/{id}")
+    public Optional<Usuario> getOne(@PathVariable("id") Integer id) {
+        return repository.findById(id);
     }
 
     @DeleteMapping("/{id}")
